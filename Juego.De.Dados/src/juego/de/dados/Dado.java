@@ -3,13 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package juego.de.dados;
+
+import java.util.Random;
 
 /**
  *
  * @author labing506
  */
 public class Dado {
-    int numero;
     
+    int numero;
+    Random miRam=new Random();
+    
+    public int Lanzar(){
+       
+    return miRam.nextInt();
+   
+    }
+            
 }
