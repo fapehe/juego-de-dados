@@ -16,6 +16,13 @@ public class JuegoDeDados {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Dado miDado1 =new Dado();
+        Dado miDado2 =new Dado();
+        Grafico miGraf=new Grafico();
+        
+        miGraf.dadoGraf1=miDado1;
+        miGraf.dadoGraf2=miDado2;
+        miGraf.setVisible(true);
     }
     
 }

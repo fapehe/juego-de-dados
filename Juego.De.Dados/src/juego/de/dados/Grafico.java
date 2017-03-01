@@ -11,6 +11,8 @@ package juego.de.dados;
  */
 public class Grafico extends javax.swing.JFrame {
 
+    Dado dadoGraf1;
+    Dado dadoGraf2;
     /**
      * Creates new form Grafico
      */
@@ -41,6 +43,11 @@ public class Grafico extends javax.swing.JFrame {
         Dado2.setText("DADO 2");
 
         Lanzamiento.setText("LANZAR");
+        Lanzamiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LanzamientoMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("APUESTA");
 
@@ -91,6 +98,12 @@ public class Grafico extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LanzamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LanzamientoMouseClicked
+        // TODO add your handling code here:
+        Dado1.setText((String.valueOf(dadoGraf1.Lanzar())));
+        Dado2.setText((String.valueOf(dadoGraf2.Lanzar())));
+    }//GEN-LAST:event_LanzamientoMouseClicked
 
     /**
      * @param args the command line arguments
