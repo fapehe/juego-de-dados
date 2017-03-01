@@ -14,6 +14,8 @@ public class Grafico extends javax.swing.JFrame {
     Dado dadoGraf1;
     Dado dadoGraf2;
     Jugador juga1;
+    int num1;
+    int num2;
     /**
      * Creates new form Grafico
      */
@@ -37,7 +39,7 @@ public class Grafico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Mensaje = new javax.swing.JLabel();
         Billetera = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Apuesta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,7 +65,7 @@ public class Grafico extends javax.swing.JFrame {
 
         Mensaje.setText("MENSAJE");
 
-        jTextField1.setText("jTextField1");
+        Apuesta.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,7 +83,7 @@ public class Grafico extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1))
+                                .addComponent(Apuesta))
                             .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(35, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -110,7 +112,7 @@ public class Grafico extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jTextField1)))
+                        .addComponent(Apuesta)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Billetera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -130,11 +132,14 @@ public class Grafico extends javax.swing.JFrame {
         dadoGraf2.Lanzar();
         Dado1.setText((String.valueOf(dadoGraf1.numero)));
         Dado2.setText((String.valueOf(dadoGraf2.numero)));
+        num1=Integer.parseInt(Dado1.getText());
+        num2=Integer.parseInt(Dado2.getText());
+        
     }//GEN-LAST:event_LanzamientoMouseClicked
 
     private void LanzamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LanzamientoActionPerformed
         // TODO add your handling code here:
-        Billetera.setText(String.valueOf(juga1.billetera));
+        Billetera.setText(String.valueOf(juga1.getBilletera()));
     }//GEN-LAST:event_LanzamientoActionPerformed
 
     /**
@@ -173,6 +178,7 @@ public class Grafico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Apuesta;
     private javax.swing.JLabel Billetera;
     private javax.swing.JLabel Dado1;
     private javax.swing.JLabel Dado2;
@@ -180,6 +186,5 @@ public class Grafico extends javax.swing.JFrame {
     private javax.swing.JLabel Mensaje;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

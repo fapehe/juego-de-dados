@@ -12,13 +12,14 @@ package juego.de.dados;
 public class Jugador {
 
     int billetera;
+
     public int getBilletera() {
-        return billetera;
+        return billetera=1000000000;
+    }
+    public void setBilletera(int billetera) {
+        this.billetera = billetera;
     }
 
-    public void setBilletera(int billetera) {
-        this.billetera = 1000000000;
-    }
     
   
    
