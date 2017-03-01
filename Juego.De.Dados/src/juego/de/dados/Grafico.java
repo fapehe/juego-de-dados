@@ -126,6 +126,7 @@ public class Grafico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    
     private void LanzamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LanzamientoMouseClicked
         // TODO add your handling code here:
         dadoGraf1.Lanzar();
