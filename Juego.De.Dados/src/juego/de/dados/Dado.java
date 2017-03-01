@@ -17,11 +17,10 @@ public class Dado {
     int numero;
     Random miRam=new Random();
     
-    public int Lanzar(){
-       do{
-        numero=miRam.nextInt();
-         }while(numero<1 || numero>7);
-       return numero;
+    public void Lanzar(){
+       
+        numero=miRam.nextInt(7);
+      
        
     }
             

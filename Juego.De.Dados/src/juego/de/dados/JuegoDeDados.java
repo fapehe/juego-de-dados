@@ -18,10 +18,12 @@ public class JuegoDeDados {
         // TODO code application logic here
         Dado miDado1 =new Dado();
         Dado miDado2 =new Dado();
+        Jugador miJug=new Jugador();
         Grafico miGraf=new Grafico();
         
         miGraf.dadoGraf1=miDado1;
         miGraf.dadoGraf2=miDado2;
+        miGraf.juga1=miJug;
         miGraf.setVisible(true);
     }
     
