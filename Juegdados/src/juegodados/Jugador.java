@@ -11,12 +11,12 @@ package juegodados;
  */
 public class Jugador {
 
-    int billetera;
+    double billetera;
 
-    public int getBilletera() {
-        return billetera=1000000000;
+    public double getBilletera() {
+        return billetera=1000000000.00;
     }
-    public void setBilletera(int billetera) {
+    public void setBilletera(double billetera) {
         this.billetera = billetera;
     }
 

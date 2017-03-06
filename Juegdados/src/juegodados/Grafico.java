@@ -26,6 +26,7 @@ public class Grafico extends javax.swing.JFrame {
      */
     public Grafico() {
         initComponents();
+        this.Lanzamiento.setEnabled(false);
     }
 
     /**
@@ -40,17 +41,17 @@ public class Grafico extends javax.swing.JFrame {
         Dado1 = new javax.swing.JLabel();
         Dado2 = new javax.swing.JLabel();
         Lanzamiento = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Mensaje = new javax.swing.JLabel();
         Billetera = new javax.swing.JLabel();
         Apuesta = new javax.swing.JTextField();
+        BotonApuesta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Dado1.setText("DADO 1");
+        Dado1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
 
-        Dado2.setText("DADO 2");
+        Dado2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
 
         Lanzamiento.setText("LANZAR");
         Lanzamiento.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,41 +65,44 @@ public class Grafico extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("APUESTA");
-
         jLabel2.setText("BILLETERA");
 
         Mensaje.setText("MENSAJE");
 
         Billetera.setText("1000000000");
 
+        BotonApuesta.setText("APOSTAR");
+        BotonApuesta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonApuestaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(Lanzamiento)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Billetera, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Apuesta))
-                            .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(35, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Billetera, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BotonApuesta)
                         .addGap(9, 9, 9)
-                        .addComponent(Lanzamiento)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))))
+                        .addComponent(Apuesta))
+                    .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,12 +116,10 @@ public class Grafico extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(Lanzamiento)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(Apuesta)))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Apuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonApuesta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Billetera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,13 +150,20 @@ public class Grafico extends javax.swing.JFrame {
         bill=Integer.parseInt(Billetera.getText());
         total=bill+gana;
         Billetera.setText(String.valueOf(total));
-        
+        this.BotonApuesta.setEnabled(true);
+        this.Lanzamiento.setEnabled(false);
         
     }//GEN-LAST:event_LanzamientoMouseClicked
 
     private void LanzamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LanzamientoActionPerformed
         // TODO add your handling code here
     }//GEN-LAST:event_LanzamientoActionPerformed
+
+    private void BotonApuestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonApuestaMouseClicked
+        // TODO add your handling code here:
+        this.BotonApuesta.setEnabled(false);
+        this.Lanzamiento.setEnabled(true);
+    }//GEN-LAST:event_BotonApuestaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,11 +203,11 @@ public class Grafico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Apuesta;
     private javax.swing.JLabel Billetera;
+    private javax.swing.JButton BotonApuesta;
     private javax.swing.JLabel Dado1;
     private javax.swing.JLabel Dado2;
     private javax.swing.JButton Lanzamiento;
     private javax.swing.JLabel Mensaje;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
